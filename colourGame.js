@@ -36,9 +36,9 @@ function setupSquares(){
     squares[i].style.background = colours[i];
 
     // click listeners to sqaures
-    squares[i].addEventListener('click', function(){
+    squares[i].addEventListener('click', function(event){
       //grab colour of clicked square
-        var clickedColour = this.style.background;
+        var clickedColour = this.style.backgroundColor;
       // compare to clicked colourGame
         if(clickedColour === goalColour) {
           messageDisplay.textContent = "Correct!";
@@ -79,8 +79,6 @@ newGame.addEventListener('click', function() {
   reset();
 });
 
-goalDisplay.textContent = goalColour;
-
 
 
 function changeColours(colour) {
@@ -117,7 +115,6 @@ function randomColour() {
   var green = Math.floor(Math.random() * 256);
   //pick a "blue" form 0 - 255
   var blue = Math.floor(Math.random() * 256);
-
   var colour = "rgb(" + red + ", " + green + ", " + blue + ")";
   return colour;
 }
